@@ -1,0 +1,231 @@
+:root {
+    /* Primary */
+    --Light-red: hsl(0, 100%, 67%);
+    --Orangey-yellow: hsl(39, 100%, 56%);
+    --Green-teal: hsl(166, 100%, 37%);
+    --Cobalt-blue: hsl(234, 85%, 45%);
+    /* Gradients */
+    --Light-slate-blue
+    /*(background)*/
+    : hsl(252, 100%, 67%);
+    --Light-royal-blue
+    /*(background)*/
+    : hsl(241, 81%, 54%);
+    --Violet-blue
+    /*(circle)*/
+    : hsla(256, 72%, 46%, 1);
+    --Persian-blue
+    /*(circle)*/
+    : hsla(241, 72%, 46%, 0);
+    /* Neutral */
+    --White: hsl(0, 0%, 100%);
+    --Pale-blue: hsl(221, 100%, 96%);
+    --Light-lavender: hsl(241, 100%, 89%);
+    --Dark-gray-blue: hsl(224, 30%, 27%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    max-width: 100%;
+    transition: all .3s;
+    font-size: 18px;
+    font-family: "Hanken Grotesk", sans-serif;
+}
+
+.Card {
+    display: flex;
+    flex-direction: column;
+}
+
+.cardResult {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to bottom, var(--Light-slate-blue), var(--Light-royal-blue));
+    border-radius: 0 0 30px 30px;
+    padding: 2rem 3rem;
+}
+
+.cardResult h1 {
+    font-size: 1rem;
+    color: var(--Light-lavender);
+}
+
+.cardScore {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 125px;
+    width: 125px;
+    margin: 1rem;
+    background-image: linear-gradient(to bottom, var(--Violet-blue), var(--Persian-blue));
+    border-radius: 50%;
+}
+
+.cardResult .cardScore p {
+    color: white;
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.cardResult .cardScore span {
+    color: var(--Light-lavender);
+    font-weight: bold;
+    opacity: .7;
+}
+
+.cardResult h2 {
+    font-size: 1.5rem;
+    color: var(--White);
+    margin-bottom: 10px;
+}
+
+.cardResult p {
+    text-align: center;
+    font-weight: 500;
+    color: var(--Light-lavender);
+}
+
+.cardSummary {
+    display: flex;
+    flex-direction: column;
+    padding: 1.75rem;
+    gap: 1rem;
+}
+
+.cardSummary h1 {
+    color: var(--Dark-gray-blue);
+    font-size: 1.5rem;
+}
+
+.cardItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+}
+
+.cardDescription {
+    display: flex;
+    gap: 1rem;
+}
+
+.cardItem.Reaction {
+    color: var(--Light-red);
+    background-color: hsla(0, 100%, 67%, .07);
+}
+
+.cardItem.Memory {
+    color: var(--Orangey-yellow);
+    background-color: hsla(39, 100%, 56%, .07);
+}
+
+.cardItem.Verbal {
+    color: var(--Green-teal);
+    background-color: hsla(166, 100%, 37%, .07);
+}
+
+.cardItem.Visual {
+    color: var(--Cobalt-blue);
+    background-color: hsla(234, 85%, 45%, .07);
+}
+
+.cardDescription h5 {
+    font-size: 1rem;
+}
+
+.blockScore {
+    font-weight: bolder;
+    color: var(--Dark-gray-blue);
+    font-size: 1rem;
+}
+
+.blockScore span {
+    color: grey;
+}
+
+.cardButton {
+    color: var(--Pale-blue);
+    background-color: var(--Dark-gray-blue);
+    border-radius: 30px;
+    text-align: center;
+    padding-block: 1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border: none;
+}
+
+.cardButton:hover,
+.cardButton:active {
+    background-color: var(--Dark-gray-blue);
+    background-image: linear-gradient(to bottom, var(--Light-slate-blue), var(--Light-royal-blue));
+    cursor: pointer;
+    transition: all 5s ease-in;
+
+}
+
+.attribution {
+    font-size: 14px;
+    text-align: center;
+    padding-block: 1rem;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+
+@media (min-width: 700px) {
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+    main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    .Card {
+        flex-direction: row;
+        justify-content: center;
+        align-self: center;
+        width: 700px;
+    }
+    .cardResult {
+        width: 50%;
+        border-radius: 30px;
+        transform: translateX(5%);
+        justify-content: space-around;
+    }
+    .cardScore {
+        height: 170px;
+        width: 170px;
+    }
+    .cardResult h1 {
+        font-size: 1.3rem;
+    }
+    .cardResult h2 {
+        font-size: 1.7rem;
+        margin-bottom: 0;
+    }
+    .cardScore {
+        height: 170px;
+        width: 170px;
+    }
+    .cardSummary {
+        width: 50%;
+        padding: 2.5rem 2.5rem 2.5rem 3.25rem;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        box-shadow: 1px 10px 20px hsla(224, 30%, 27%, .3);
+    }
+}
